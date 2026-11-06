@@ -1,0 +1,39 @@
+Larkfield LF-200 Troubleshooting Guide (fictional sample content)
+
+Error codes appear on the System Status page and in the event log. Each code has a specific cause, so check the exact number before following any steps.
+
+ERR-4012: Upstream authentication rejected. The provider's network refused the credentials stored on the gateway. This usually follows a change to your account or a move to a new plan. Re-enter the service username and password under Network, then WAN. If the code remains, ask your provider to confirm the credentials on file.
+
+ERR-4013: Upstream authentication timed out. The gateway asked the provider's network to confirm its credentials and received no reply within 30 seconds. The credentials themselves may be correct. This is normally caused by a provider outage, so wait 15 minutes before changing anything.
+
+ERR-4021: Optical signal too weak. The light level at the fibre port has fallen below the minimum of -27 dBm. Check that the patch lead is fully seated, is not sharply bent, and has a clean connector. Do not look into the end of a fibre lead, because the light can damage your eyes.
+
+ERR-4022: Optical signal too strong. The light level at the fibre port is above the maximum of -8 dBm. This is rare and is usually caused by a missing attenuator after installation work. Contact your provider, as this cannot be fixed from the gateway.
+
+ERR-5107: Firmware image failed verification. A downloaded update did not pass its signature check and was discarded. The gateway continues to run its current firmware safely. It will download the update again on the next nightly check, so no action is needed unless this repeats for three nights.
+
+ERR-5110: Not enough storage for update. The gateway could not unpack a firmware update because its internal log storage is full. Open System, then Logs, and select Clear Event Log. The update will be retried on the next nightly check.
+
+ERR-6031: Address pool exhausted. All addresses available for handing out to devices are in use, so new devices cannot join. Increase the range under Network, then DHCP, or remove old reservations. The default pool provides 150 addresses.
+
+ERR-6044: Duplicate address detected. Two devices are using the same address on the local network, usually because one has been given a fixed address manually. Set that device to obtain its address automatically, or reserve the address for it under Network, then DHCP Reservations.
+
+Slow wireless speeds
+
+Move the gateway out of cupboards and away from metal objects, microwave ovens and baby monitors. Place it high up and near the centre of the home. Crowded airwaves are a common cause in apartment buildings: open Wireless, then Advanced, and select Rescan Channels to move to a quieter channel. If speeds are normal over an Ethernet cable but poor over wireless, the problem is with the wireless path rather than your internet service.
+
+Devices keep dropping off the network
+
+If devices disconnect at about the same time every night, check Scheduled Maintenance in the manual, as this is the expected restart. If drops happen at random, turn off Band Steering so that older devices stop being moved between bands. Older devices sometimes handle WPA3 poorly, so setting Security to WPA2 under Wireless can also help.
+
+No internet but the wireless network is visible
+
+Check the Link light first. If it is solid green, restart the gateway and the affected device. If it is flashing or red, the fault lies between the wall socket and the gateway, so check the fibre patch lead. Look on the System Status page for an error code.
+
+Forgotten admin password
+
+If you changed the admin password and no longer remember it, the only way back in is a factory reset, which erases all of your settings. Restoring a saved settings backup afterwards brings them back. The password printed on the label only works until you have changed it, or again after a factory reset.
+
+Gateway is hot to the touch
+
+The case normally runs warm. Keep the vents clear, do not stack anything on top, and do not operate the unit above 40 degrees Celsius. If it shuts itself down, unplug it for 30 minutes before trying again, and stop using it if this repeats.
